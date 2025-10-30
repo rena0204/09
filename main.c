@@ -1,17 +1,37 @@
 #include <stdio.h>
+#define ROWS 3
+#define COLS 3
 
-int main(void) 
+int main(void)
 {
-	int testscore[5];
-	int i;
+	int A[ROWS][COLS] = {
+	{2,3,0},
+	{8,9,1},
+	{7,0,5}};
 	
-	testscore[0]=10;
-	testscore[1]=20;
-	testscore[2]=30;
-	testscore[3]=40;
-	testscore[4]=50;
-	
-	for(i=0;i<5;i++)
-		printf("testscore[%d]=%d\n",i,testscore[i]);
-	return 0;
+	int B[ROWS][COLS] = {
+	{1,0,0},
+	{0,1,0},
+	{0,0,1}};
+
+	int C[ROWS][COLS];
+}
+
+void addMatrix(int A[][COLS], int B[][COLS], int C[][COLS])
+{
+	int i,j;
+	for (i=0;i<ROWS;i++)
+		for(j=0;j<COLS;j++)
+			C[i][j] = A[i][j] + B[i][j];
+}
+
+void printMatrix(int A[][COLS])
+{
+	int i,j;
+	for(i=0;i<ROWS;i++)
+	{
+		for(j=0;j<COLS;j++)
+			printf("%3d",A[i][j]);
+		printf("\n");
+	}
 }
