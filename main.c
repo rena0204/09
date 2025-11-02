@@ -5,16 +5,23 @@
 
 int main(int argc, char *argv[])
 {
-	int testscore[SIZE];
 	int i;
-	
-	printf("%d명 점수를 입력하세요\n", SIZE);
+	int a[SIZE]={1,2,3,4,5};
+	int b[SIZE]={1,2,3,4,5};
+	int flag_same=1;
 	
 	for(i=0;i<SIZE;i++)
-		scanf("%d",&testscore[i]);
-		
-	for(i=0;i<SIZE;i++)
-		printf("grade[%d]=%d\n",i, testscore[i]);
+	{
+		if(a[i]!=b[i])
+		{
+			printf("%i-th element is diff.\n",i);
+			flag_same=0;
+		}
+	}
+	
+	printf("Are a and b the same? %i\n",flag_same);
+	
+	return 0;
 }
 
 
